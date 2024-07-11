@@ -27,7 +27,7 @@ source ${EXPERIMENT_PATH}/functions.sh
 
 
 # Derive procedure for indexing and search information
-OSB_INDEX_PROCEDURE="train-test-index-with-merge"
+OSB_INDEX_PROCEDURE="no-train-test-index-with-merge"
 
 # Copy params to OSB folder
 cp ${PARAMS_PATH}/100.json ${OSB_PARAMS_PATH}/
