@@ -1,7 +1,9 @@
 # Build the plugin
 ARG OPENSEARCH_VERSION=3.0.0
 FROM opensearchstaging/ci-runner:ci-runner-centos7-opensearch-build-v3 as build
+ARG OPENSEARCH_VERSION=3.0.0
 COPY ./build-plugin.sh /
+ARG OPENSEARCH_VERSION=3.0.0
 ARG TEST_REPO
 ARG TEST_BRANCH
 RUN echo ${OPENSEARCH_VERSION}
