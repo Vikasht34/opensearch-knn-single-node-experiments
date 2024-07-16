@@ -41,8 +41,8 @@
     },
 
     "query_data_set_format": "hdf5",
-    "query_data_set_corpus": "cohere-10m",
-    "query_count": 10000,
+    "query_data_set_path": "/tmp/share-data/data/mpnet_nq_correct.hdf5",
+    "query_count": 3452,
     "search_clients": 8,
     "pq_m": 100,
     "train_model_method": "NA"
