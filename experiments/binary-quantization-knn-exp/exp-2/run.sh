@@ -39,9 +39,8 @@ cp ${PARAMS_PATH}/500.json ${OSB_PARAMS_PATH}/
 
 # Initialize shared data folder for containers
 mkdir -m 777 /tmp/share-data
-mkdir -m 777 /tmp/share-data/data
 
-aws s3 cp s3://knn-all-datasets/mpnet_nq_correct.hdf5 /tmp/share-data/data/mpnet_nq_correct.hdf5
+aws s3 cp s3://knn-all-datasets/mpnet_nq_correct.hdf5 /tmp/share-data/mpnet_nq_correct.hdf5
 
 setup_environment ${TMP_ENV_DIR} ${TMP_ENV_NAME} "index-build" 100.json ${OSB_INDEX_PROCEDURE} false
 docker compose --env-file ${INDEX_ENV_PATH} --env-file ${TMP_ENV_PATH} -f compose.yaml up -d
