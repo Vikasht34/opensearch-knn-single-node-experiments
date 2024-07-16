@@ -1,0 +1,48 @@
+{
+    "target_index_name": "target_index",
+    "target_field_name": "target_field",
+    "target_index_body": "indices/faiss-index.json",
+    "target_index_primary_shards": 4,
+    "target_index_replica_shards": 0,
+    "target_index_dimension": 768,
+    "target_index_space_type": "l2",
+
+    "target_index_bulk_size": 100,
+    "target_index_bulk_index_data_set_format": "hdf5",
+    "target_index_bulk_index_data_set_path": "/share-data/mpnet_marco_1.hdf5",
+    "target_index_bulk_indexing_clients": 10,
+    "ivf_nlist": 4096,
+    "ivf_nprobes": 256,
+    "pq_code_size": 8,
+
+    "train_model_id": "test_model",
+    "train_timeout": 20000,
+    "train_index_name": "train_index",
+    "train_index_body": "indices/train-index.json",
+    "train_field_name": "train_field",
+    "train_search_size": 100,
+    "train_index_num_vectors": 1000000,
+    "train_index_bulk_index_clients": 10,
+    "train_index_bulk_index_data_set_format": "hdf5",
+    "train_index_bulk_index_data_set_corpus": "cohere-10m",
+    "train_index_bulk_size": 500,
+    "train_index_primary_shards": 8,
+    "train_index_replica_shards": 0,
+    "target_index_max_num_segments": 1,
+    "hnsw_ef_search": 512,
+    "hnsw_ef_construction": 512,
+    "hnsw_m": 16,
+
+    "query_k": 400,
+    "query_body": {
+         "docvalue_fields" : ["_id"],
+         "stored_fields" : "_none_"
+    },
+
+    "query_data_set_format": "hdf5",
+    "query_data_set_path": "/share-data/mpnet_marco_1.hdf5",
+    "query_count": 100000,
+    "search_clients": 1,
+    "pq_m": 100,
+    "train_model_method": "NA"
+}
