@@ -9,7 +9,7 @@
 
     "target_index_bulk_size": 100,
     "target_index_bulk_index_data_set_format": "hdf5",
-    "target_index_bulk_index_data_set_path": "/tmp/share-data/mpnet_nq_correct.hdf5",
+    "target_index_bulk_index_data_set_path": "/share-data/mpnet_nq_correct.hdf5",
     "target_index_bulk_indexing_clients": 10,
     "ivf_nlist": 4096,
     "ivf_nprobes": 256,
@@ -40,7 +40,7 @@
     },
 
     "query_data_set_format": "hdf5",
-    "query_data_set_path": "/tmp/share-data/mpnet_nq_correct.hdf5",
+    "query_data_set_path": "/share-data/mpnet_nq_correct.hdf5",
     "query_count": 3452,
     "search_clients": 4,
     "pq_m": 100,
