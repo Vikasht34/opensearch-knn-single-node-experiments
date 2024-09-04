@@ -14,6 +14,8 @@ FROM opensearchstaging/opensearch:${OPENSEARCH_VERSION}
 ARG OPENSEARCH_VERSION
 USER root
 RUN yum install unzip procps -y
+RUN yum install -y jemalloc-devel
+ENV LD_PRELOAD=/usr/lib64/libjemalloc.so.2
 USER opensearch
 RUN  rm -rf plugins/opensearch-knn
 RUN mkdir plugins/opensearch-knn
