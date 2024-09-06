@@ -1,6 +1,6 @@
 # Build the plugin
 ARG OPENSEARCH_VERSION
-FROM opensearchstaging/ci-runner:ci-runner-centos7-opensearch-build-v3 as build
+FROM opensearchstaging/ci-runner:ci-runner-al2-opensearch-build-v1 as build
 COPY ./build-plugin.sh /
 
 ARG OPENSEARCH_VERSION
