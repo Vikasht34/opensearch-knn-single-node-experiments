@@ -14,7 +14,7 @@ set -xe
 # Params:
 #   method: hnsw, ivf, hnswpq, ivfpq
 #   rescore context: 0r, 1r, 2r
-#   compression level: 8x, 12x, 16x, 24x
+#   compression level: 8x, 12x, 32x, 24x
 METHOD=$1
 RESCORE_CONTEXT=$2
 COMPRESSION_LEVEL=$3

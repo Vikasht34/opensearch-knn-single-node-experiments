@@ -1,8 +1,10 @@
 {
     "operation": {
-        "name": "prod-queries",
+        "name": "knn-with-rescore-query",
+        "param-source": "knn-with-rescore-query",
         "operation-type": "vector-search",
         "index": "{{ target_index_name | default('target_index') }}",
+        "rescore_factor": "{{ oversample_factor }}",
         "detailed-results": true,
         "k": {{ query_k  | default(100) }},
         "field" : "{{ target_field_name | default('target_field') }}",

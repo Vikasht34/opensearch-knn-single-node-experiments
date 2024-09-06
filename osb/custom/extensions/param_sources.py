@@ -33,9 +33,7 @@ class KNNQueryWithRescoreQueryParamSource(VectorSearchPartitionParamSource):
 
     def __init__(self, workloads, params, query_params, **kwargs):
         super().__init__(workloads, params, query_params, **kwargs)
-        self.space_type = parse_string_parameter("space_type", params, "l2")
-        self.should_rescore = parse_string_parameter("should_rescore", params, "no")
-        self.rescore_factor = parse_int_parameter("rescore_factor", params, 1)
+        self.rescore_factor = parse_int_parameter("rescore_factor", params, 2.0)
 
     def _update_body_params(self, vector):
         # accept body params if passed from workload, else, create empty dictionary
@@ -45,31 +43,6 @@ class KNNQueryWithRescoreQueryParamSource(VectorSearchPartitionParamSource):
         if self.PARAMS_NAME_QUERY in body_params:
             self.logger.warning(
                 "[%s] param from body will be replaced with vector search query.", self.PARAMS_NAME_QUERY)
-        # Potentially rescore based on full precision vectors
-        if self.should_rescore == "yes":
-            body_params[self.PARAMS_NAME_RESCORE] = {
-                "window_size": self.k * self.rescore_factor,
-                "query": {
-                    "rescore_query": {
-                        "script_score": {
-                            "query": {
-                                "match_all": {}
-                            },
-                            "script": {
-                                "lang": "knn",
-                                "source": "knn_score",
-                                "params": {
-                                    "field": self.field_name,
-                                    "query_value": vector,
-                                    "space_type": self.space_type
-                                }
-                            }
-                        }
-                    },
-                    "query_weight": 0,
-                    "rescore_query_weight": 1
-                }
-            }
 
         efficient_filter=self.query_params.get(self.PARAMS_NAME_FILTER)
         # override query params with vector search query
@@ -86,7 +59,10 @@ class KNNQueryWithRescoreQueryParamSource(VectorSearchPartitionParamSource):
         """
         query = {
             "vector": vector,
-            "k": self.k * self.rescore_factor,
+            "k": self.k,
+            "rescore": {
+                "oversample_factor": self.rescore_factor
+            }
         }
         if efficient_filter:
             query.update({

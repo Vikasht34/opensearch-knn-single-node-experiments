@@ -6,7 +6,7 @@ set -xe
 # bash experiments/BinaryQuantization/run.sh <compression level> <ef search value> <query K>
 #
 # Params:
-#   compression level: e.g., 1x, 8x, 16x, 32x
+#   compression level: e.g., 1x, 8x, 32x, 32x
 #   ef search value: integer value for ef search
 
 COMPRESSION_LEVEL=$1

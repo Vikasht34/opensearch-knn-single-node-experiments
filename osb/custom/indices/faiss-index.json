@@ -40,7 +40,13 @@
                 ,
               {%- endif %}
                 "m": {{ hnsw_m }}
-              {%- endif %}
+              {%- endif %},
+              "encoder": {
+                "name": "binary",
+                "params": {
+                  "bits": {{ hnsw_encoding_bits }}
+                }
+              }
             }
           }
         }
