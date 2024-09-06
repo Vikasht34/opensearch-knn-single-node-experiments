@@ -53,7 +53,7 @@ get_recall() {
               {
                 "match": {
                   "operation" : {
-                    "query": "prod-queries"
+                    "query": "knn-with-rescore-query"
                    }
                  }
               }
