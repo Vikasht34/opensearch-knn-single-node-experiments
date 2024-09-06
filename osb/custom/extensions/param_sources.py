@@ -1,4 +1,4 @@
-from osbenchmark.utils.parse import parse_string_parameter, parse_int_parameter
+from osbenchmark.utils.parse import parse_string_parameter, parse_int_parameter, parse_float_parameter
 from osbenchmark.workload.params import VectorSearchPartitionParamSource, SearchParamSource
 from osbenchmark import exceptions
 
@@ -33,7 +33,7 @@ class KNNQueryWithRescoreQueryParamSource(VectorSearchPartitionParamSource):
 
     def __init__(self, workloads, params, query_params, **kwargs):
         super().__init__(workloads, params, query_params, **kwargs)
-        self.rescore_factor = parse_int_parameter("rescore_factor", params, 2.0)
+        self.rescore_factor = parse_float_parameter("rescore_factor", params, 2.0)
 
     def _update_body_params(self, vector):
         # accept body params if passed from workload, else, create empty dictionary

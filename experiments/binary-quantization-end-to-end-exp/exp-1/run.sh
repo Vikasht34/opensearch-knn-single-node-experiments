@@ -44,25 +44,25 @@ setup_environment ${TMP_ENV_DIR} ${TMP_ENV_NAME} "search-100" 100.json "search-o
 docker compose --env-file ${SEARCH_ENV_PATH} --env-file ${TMP_ENV_PATH} -f compose.yaml up -d
 clear_cache
 
-wait_for_container_stop osb
-setup_environment ${TMP_ENV_DIR} ${TMP_ENV_NAME} "search-200" 200.json "search-only" true
-docker compose --env-file ${SEARCH_ENV_PATH} --env-file ${TMP_ENV_PATH} -f compose.yaml up -d
-clear_cache
-
-wait_for_container_stop osb
-setup_environment ${TMP_ENV_DIR} ${TMP_ENV_NAME} "search-300" 300.json "search-only" true
-docker compose --env-file ${SEARCH_ENV_PATH} --env-file ${TMP_ENV_PATH} -f compose.yaml up -d
-clear_cache
-
-wait_for_container_stop osb
-setup_environment ${TMP_ENV_DIR} ${TMP_ENV_NAME} "search-400" 400.json "search-only" true
-docker compose --env-file ${SEARCH_ENV_PATH} --env-file ${TMP_ENV_PATH} -f compose.yaml up -d
-clear_cache
-
-wait_for_container_stop osb
-setup_environment ${TMP_ENV_DIR} ${TMP_ENV_NAME} "search-500" 500.json "search-only" true
-docker compose --env-file ${SEARCH_ENV_PATH} --env-file ${TMP_ENV_PATH} -f compose.yaml up -d
-clear_cache
+#wait_for_container_stop osb
+#setup_environment ${TMP_ENV_DIR} ${TMP_ENV_NAME} "search-200" 200.json "search-only" true
+#docker compose --env-file ${SEARCH_ENV_PATH} --env-file ${TMP_ENV_PATH} -f compose.yaml up -d
+#clear_cache
+#
+#wait_for_container_stop osb
+#setup_environment ${TMP_ENV_DIR} ${TMP_ENV_NAME} "search-300" 300.json "search-only" true
+#docker compose --env-file ${SEARCH_ENV_PATH} --env-file ${TMP_ENV_PATH} -f compose.yaml up -d
+#clear_cache
+#
+#wait_for_container_stop osb
+#setup_environment ${TMP_ENV_DIR} ${TMP_ENV_NAME} "search-400" 400.json "search-only" true
+#docker compose --env-file ${SEARCH_ENV_PATH} --env-file ${TMP_ENV_PATH} -f compose.yaml up -d
+#clear_cache
+#
+#wait_for_container_stop osb
+#setup_environment ${TMP_ENV_DIR} ${TMP_ENV_NAME} "search-500" 500.json "search-only" true
+#docker compose --env-file ${SEARCH_ENV_PATH} --env-file ${TMP_ENV_PATH} -f compose.yaml up -d
+#clear_cache
 
 # Add at the end to ensure container finishes
 wait_for_container_stop osb
