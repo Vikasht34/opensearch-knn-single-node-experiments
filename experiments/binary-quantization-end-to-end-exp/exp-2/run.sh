@@ -14,7 +14,7 @@ SEARCH_CLIENT=$2
 EF_SEARCH=$3
 
 # Constants
-EXPERIMENT_PATH="experiments/binary-quantization-end-to-end-exp/exp-1"
+EXPERIMENT_PATH="experiments/binary-quantization-end-to-end-exp/exp-2"
 BASE_ENV_PATH="${EXPERIMENT_PATH}/env/${COMPRESSION_LEVEL}"
 INDEX_ENV_PATH="${BASE_ENV_PATH}/index-build.env"
 SEARCH_ENV_PATH="${BASE_ENV_PATH}/search.env"
