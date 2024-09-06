@@ -32,10 +32,6 @@ OSB_INDEX_PROCEDURE="no-train-test-index-with-merge"
 
 # Copy params to OSB folder
 cp ${PARAMS_PATH}/100.json ${OSB_PARAMS_PATH}/
-cp ${PARAMS_PATH}/200.json ${OSB_PARAMS_PATH}/
-cp ${PARAMS_PATH}/300.json ${OSB_PARAMS_PATH}/
-cp ${PARAMS_PATH}/400.json ${OSB_PARAMS_PATH}/
-cp ${PARAMS_PATH}/500.json ${OSB_PARAMS_PATH}/
 
 # Initialize shared data folder for containers
 mkdir -m 777 /tmp/share-data
