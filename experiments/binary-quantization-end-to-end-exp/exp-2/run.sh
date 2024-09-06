@@ -23,6 +23,7 @@ PARAMS_PATH="${EXPERIMENT_PATH}/osb-params/${COMPRESSION_LEVEL}/sc-${SEARCH_CLIE
 TMP_ENV_DIR="${EXPERIMENT_PATH}/tmp"
 TMP_ENV_NAME="test.env"
 TMP_ENV_PATH="${EXPERIMENT_PATH}/${TMP_ENV_NAME}"
+STOP_PROCESS_PATH="/tmp/share-data/stop.txt"
 
 source ${EXPERIMENT_PATH}/functions.sh
 
@@ -36,13 +37,14 @@ cp ${PARAMS_PATH}/100.json ${OSB_PARAMS_PATH}/
 # Initialize shared data folder for containers
 mkdir -m 777 /tmp/share-data
 
+aws s3 cp s3://knn-all-datasets/mpnet_nq_correct.hdf5 /tmp/share-data/mpnet_nq_correct.hdf5
+
 setup_environment ${TMP_ENV_DIR} ${TMP_ENV_NAME} "index-build" 100.json ${OSB_INDEX_PROCEDURE} false
 docker compose --env-file ${INDEX_ENV_PATH} --env-file ${TMP_ENV_PATH} -f compose.yaml up -d
 
 wait_for_container_stop osb
 echo stop > ${STOP_PROCESS_PATH}
 sleep 10
-
 setup_environment ${TMP_ENV_DIR} ${TMP_ENV_NAME} "search-100" 100.json "search-only" true
 docker compose --env-file ${SEARCH_ENV_PATH} --env-file ${TMP_ENV_PATH} -f compose.yaml up -d
 clear_cache
@@ -71,6 +73,4 @@ clear_cache
 wait_for_container_stop osb
 echo stop > ${STOP_PROCESS_PATH}
 sleep 10
-
-
 echo "Finished all runs"
