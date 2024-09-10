@@ -33,7 +33,7 @@
     "hnsw_ef_construction": 256,
     "hnsw_m": 16,
     "hnsw_encoding_bits": 1,
-    "oversample_factor": 3.0,
+    "oversample_factor": 4.0,
 
     "query_k": 100,
     "query_body": {
