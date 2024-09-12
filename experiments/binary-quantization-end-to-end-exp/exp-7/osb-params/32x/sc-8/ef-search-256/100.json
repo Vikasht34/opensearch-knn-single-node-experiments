@@ -2,7 +2,7 @@
     "target_index_name": "target_index",
     "target_field_name": "target_field",
     "target_index_body": "indices/faiss-index.json",
-    "target_index_primary_shards": 1,
+    "target_index_primary_shards": 4,
     "target_index_replica_shards": 0,
     "target_index_dimension": 1536,
     "target_index_space_type": "innerproduct",
@@ -33,7 +33,7 @@
     "hnsw_ef_construction": 256,
     "hnsw_m": 16,
     "hnsw_encoding_bits": 1,
-    "oversample_factor": 4.0,
+    "oversample_factor": 3.0,
 
     "query_k": 100,
     "query_body": {

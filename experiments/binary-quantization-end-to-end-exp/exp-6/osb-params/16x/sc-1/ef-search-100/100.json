@@ -34,7 +34,7 @@
     "train_index_bulk_size": 500,
     "train_index_primary_shards": 8,
     "train_index_replica_shards": 0,
-    "oversample_factor": 2.0,
+    "oversample_factor": 3.0,
 
     "query_k": 100,
     "query_body": {

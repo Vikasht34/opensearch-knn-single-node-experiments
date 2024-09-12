@@ -36,7 +36,7 @@
 
     "query_k": 100,
     "hnsw_encoding_bits": 4,
-    "oversample_factor": 1.5,
+    "oversample_factor": 2.0,
     "query_body": {
          "docvalue_fields" : ["_id"],
          "stored_fields" : "_none_"
