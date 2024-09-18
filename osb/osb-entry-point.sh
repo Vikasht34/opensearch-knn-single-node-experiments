@@ -133,7 +133,7 @@ set_knn_circuit_breaker_to_95
 if [ "$PROCEDURE" = "search-only" ]; then
   set_knn_index_thread_qty 1
 else
-  set_knn_index_thread_qty 4
+  set_knn_index_thread_qty 8
 fi
 
 opensearch-benchmark execute-test \

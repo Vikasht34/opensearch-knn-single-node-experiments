@@ -1,8 +1,8 @@
-FROM opensearchproject/opensearch-benchmark:1.5.0
+FROM opensearchproject/opensearch-benchmark:1.9.1
 
 USER 0
 RUN ["apt-get", "update"]
-RUN ["apt-get", "install", "jq", "--assume-yes"]
+RUN ["apt-get", "install", "--assume-yes", "jq", "curl"]
 USER 1000
 COPY osb-entry-point.sh /
 COPY custom /custom
