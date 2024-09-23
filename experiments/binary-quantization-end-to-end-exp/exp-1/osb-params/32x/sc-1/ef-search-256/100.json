@@ -9,7 +9,7 @@
 
     "target_index_bulk_size": 100,
     "target_index_bulk_index_data_set_format": "hdf5",
-    "target_index_bulk_index_data_set_corpus": "cohere-10m",
+    "target_index_bulk_index_data_set_corpus": "cohere-1m",
     "target_index_bulk_indexing_clients": 10,
     "ivf_nlist": 4096,
     "ivf_nprobes": 256,
@@ -24,7 +24,7 @@
     "train_index_num_vectors": 1000000,
     "train_index_bulk_index_clients": 10,
     "train_index_bulk_index_data_set_format": "hdf5",
-    "train_index_bulk_index_data_set_corpus": "cohere-10m",
+    "train_index_bulk_index_data_set_corpus": "cohere-1m",
     "train_index_bulk_size": 500,
     "train_index_primary_shards": 8,
     "train_index_replica_shards": 0,
@@ -35,14 +35,14 @@
     "hnsw_encoding_bits": 1,
 
     "query_k": 100,
-    "oversample_factor": 3.0,
+    "oversample_factor": 6.0,
     "query_body": {
          "docvalue_fields" : ["_id"],
          "stored_fields" : "_none_"
     },
 
     "query_data_set_format": "hdf5",
-    "query_data_set_corpus": "cohere-10m",
+    "query_data_set_corpus": "cohere-1m",
     "query_count": 10000,
     "search_clients": 1,
     "pq_m": 100,
