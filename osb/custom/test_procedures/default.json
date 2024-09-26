@@ -58,4 +58,15 @@
        {{ benchmark.collect(parts="common/index-only-schedule.json") }},
        {{ benchmark.collect(parts="common/force-merge-schedule.json") }}
     ]
+},
+{
+    "name": "test-index-with-merge-search",
+    "description": "Perform only indexing operation for vector search",
+    "default": false,
+    "schedule": [
+       {{ benchmark.collect(parts="common/index-only-schedule.json") }},
+       {{ benchmark.collect(parts="common/force-merge-schedule.json") }},
+       {{ benchmark.collect(parts="common/search-with-rescore-only-schedule.json") }}
+    ]
 }
+

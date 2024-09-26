@@ -2,8 +2,8 @@ import os
 import sys
 sys.path.append(os.path.abspath(os.getcwd()))
 
-from extensions.param_sources import register as custom_register
-from runners import register as register_runners
+from .param_sources import register as custom_register
+from .runners import register as register_runners
 
 
 def register(registry):
