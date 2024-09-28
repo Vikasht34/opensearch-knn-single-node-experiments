@@ -42,12 +42,12 @@ aws s3 cp s3://knn-all-datasets/gist-960-euclidean.hdf5 /tmp/share-data/gist-960
 setup_environment ${TMP_ENV_DIR} ${TMP_ENV_NAME} "index-build" 100.json ${OSB_INDEX_PROCEDURE} false
 docker compose --env-file ${INDEX_ENV_PATH} --env-file ${TMP_ENV_PATH} -f compose.yaml up -d
 
-wait_for_container_stop osb
-echo stop > ${STOP_PROCESS_PATH}
-sleep 10
-setup_environment ${TMP_ENV_DIR} ${TMP_ENV_NAME} "search-100" 100.json "search-only" true
-docker compose --env-file ${SEARCH_ENV_PATH} --env-file ${TMP_ENV_PATH} -f compose.yaml up -d
-clear_cache
+#wait_for_container_stop osb
+#echo stop > ${STOP_PROCESS_PATH}
+#sleep 10
+#setup_environment ${TMP_ENV_DIR} ${TMP_ENV_NAME} "search-100" 100.json "search-only" true
+#docker compose --env-file ${SEARCH_ENV_PATH} --env-file ${TMP_ENV_PATH} -f compose.yaml up -d
+#clear_cache
 
 #wait_for_container_stop osb
 #setup_environment ${TMP_ENV_DIR} ${TMP_ENV_NAME} "search-200" 200.json "search-only" true
@@ -70,7 +70,7 @@ clear_cache
 #clear_cache
 
 # Add at the end to ensure container finishes
-wait_for_container_stop osb
-echo stop > ${STOP_PROCESS_PATH}
-sleep 10
-echo "Finished all runs"
+#wait_for_container_stop osb
+#echo stop > ${STOP_PROCESS_PATH}
+#sleep 10
+#echo "Finished all runs"
