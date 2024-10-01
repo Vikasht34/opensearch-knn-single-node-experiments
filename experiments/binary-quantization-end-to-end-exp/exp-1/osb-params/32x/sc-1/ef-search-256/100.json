@@ -42,7 +42,7 @@
     },
 
     "query_data_set_format": "hdf5",
-    "query_data_set_corpus": "cohere-1m",
+    "query_data_set_corpus": "cohere-100k",
     "query_count": 10000,
     "search_clients": 1,
     "pq_m": 100,
